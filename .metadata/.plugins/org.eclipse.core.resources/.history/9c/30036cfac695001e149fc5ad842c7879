@@ -1,0 +1,23 @@
+package com.superPackage;
+
+public class Child extends Parent{
+	
+	String empName = "Abby";
+	int empNum = 65778;
+
+	public static void main(String[] args) {
+		
+
+		Child c = new Child();
+		c.getData();  // this will print Abby and 65778 in the console.
+
+	}
+	
+	public void getData()
+	{
+		System.out.println(empName);
+		System.out.println(empNum);
+		super.getData();
+	}
+
+}

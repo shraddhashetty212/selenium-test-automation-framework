@@ -1,0 +1,44 @@
+package ui;
+
+import org.testng.Assert;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+
+import common.BaseTest;
+
+public class ReportsTest extends BaseTest{
+	
+	@Test
+	public void reportTest1()
+	{
+		System.out.println("This is test1");
+		
+		//to print the message on the report we use Reporter.log
+		Reporter.log("This is test1");
+	}
+	
+	@Test
+	public void reportTest2()
+	{
+		System.out.println("This is test2");
+		driver.get("https://salesforce.com");
+		Assert.assertTrue(false);
+	}
+	
+	@Test
+	public void reportTest3()
+	{
+		System.out.println("This is test3");
+	}
+	
+	@Test
+	public void reportTest4()
+	{
+		System.out.println("This is test4");
+	}
+
+}
+
+//Link - https://javadoc.io/doc/org.testng/testng/latest/org/testng/Reporter.html
+//We can listener as well to get the report
+//Link - https://javadoc.io/doc/org.testng/testng/latest/org/testng/ITestListener.html

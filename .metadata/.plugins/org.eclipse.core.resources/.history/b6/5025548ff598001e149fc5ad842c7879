@@ -1,0 +1,23 @@
+package com.wrapper;
+
+import java.util.HashSet;
+
+public class HashSetDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		HashSet<Integer> hsetdemo = new HashSet<Integer>();
+		hsetdemo.add(10);
+		hsetdemo.add(20);
+		hsetdemo.add(30);
+		hsetdemo.add(40);
+		hsetdemo.add(40);
+	}
+
+}
+
+/*
+ * https://www.javadoc.io/doc/io.javaslang/javaslang/2.0.2/javaslang/collection/HashSet.html
+ * 
+ */

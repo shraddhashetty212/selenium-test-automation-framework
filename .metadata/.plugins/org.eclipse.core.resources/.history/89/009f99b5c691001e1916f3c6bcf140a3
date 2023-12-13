@@ -1,0 +1,20 @@
+package tests;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class ReadWrite {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		
+		Properties properties = new Properties();
+		FileInputStream inputstream = new FileInputStream("/Users/shraddhashetty/eclipse-workspace/rwFile/src/test/resources/properties/testdata.properties");
+		properties.load(inputstream);
+		System.out.println(properties.getProperty("browser"));
+		System.out.println(properties.getProperty("url"));
+
+	}
+
+}

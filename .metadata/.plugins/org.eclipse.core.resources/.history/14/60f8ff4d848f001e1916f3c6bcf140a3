@@ -1,0 +1,44 @@
+package ui;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class KeyBoardEvents {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		
+		WebDriverManager.chromedriver().setup();		
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://extendsclass.com/text-compare.html");
+		driver.manage().window().maximize();
+		
+		//cookies
+		driver.findElement(By.xpath("//button[@aria-label='Do not consent']")).click();
+		
+		WebElement sourceTextArea = driver.findElement(By.xpath("//div[@role='presentation']//div[@class='CodeMirror-code']//pre[@class=' CodeMirror-line ']//span[contains(text(),'be difficult,')]"));
+		
+		Actions action = new Actions(driver);
+		action.keyDown(sourceTextArea, Keys.CONTROL).sendKeys("a").sendKeys("c").build().perform();
+		Thread.sleep(3000);
+		
+		WebElement destinationTextArea = driver.findElement(By.xpath("//div[@id='dropZone2']//div[@class='CodeMirror-scroll']//div[6]//pre[1]"));
+		action.keyDown(destinationTextArea, Keys.CONTROL).sendKeys("a").sendKeys("v").build().perform();
+		Thread.sleep(3000);
+		
+		driver.quit();
+
+	}
+
+}
+
+//Link - https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/WebDriver.html
+//Link for alert - https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/WebDriver.TargetLocator.html and then click on alert
+//https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/Alert.html
+
+

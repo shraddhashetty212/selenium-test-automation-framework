@@ -1,0 +1,33 @@
+package ui;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class DataProviderDemoTest2 {
+
+	@Test(dataProvider = "dataSet")
+	public void test(String username, String password) {
+		System.out.println(username + "=====" + password);
+	}
+
+
+	// Another way of defining data provider
+	@DataProvider(name="create")
+	public Object[][] dataSet1() {
+
+		return new Object[][] 
+		{ 
+			{ "username", "password"}, 
+			{ "username1", "password1"},
+			{ "username2", "password2"},
+			{ "username3", "password3"}
+		};
+	};
+
+	@Test(dataProvider = "create")
+	public void test1(String username, String password, String test) 
+	{
+		System.out.println(username + "=====" + password + "=====" + test);
+	}
+
+}

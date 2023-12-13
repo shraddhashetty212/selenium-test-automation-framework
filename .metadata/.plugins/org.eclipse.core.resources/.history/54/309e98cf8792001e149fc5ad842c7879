@@ -1,0 +1,15 @@
+package common;
+
+public class CommonDataSetup {
+	
+	public void dataSetup()
+	{
+		System.out.println("Common data setup");
+	}
+	
+	public void dataTeardown()
+	{
+		System.out.println("Common data cleanup");
+	}
+
+}

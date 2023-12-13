@@ -1,0 +1,48 @@
+package common;
+
+import java.io.IOException;
+
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+
+import utilities.TestUtils;
+
+public class Listeners extends TestUtils implements ITestListener{
+	
+	public void onTestStart(ITestResult result)
+	{
+		System.setProperty("org.uncommons.reportng.title", "Selenium Training Test Report");
+		Reporter.log("Method name is - "+result.getName());
+		System.out.println("Test case is starting");
+	}
+	
+	public void onTestSuccess(ITestResult result)
+	{
+		Reporter.log("Status of execution is - "+result.getStatus());
+	}
+	
+	public void onTestFailure(ITestResult result)
+	{
+		System.out.println("Test failed - screenshot captured");
+		
+		try {
+			getScreenshot();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.setProperty("org.uncommons.reportng.escape-output", "false");
+		Reporter.log("<a href=\"/Users/shraddhashetty/eclipse-workspace/webportal/screenshot/Tue-Dec-05-11-00-53-CET-2023.png\">Test Results</a>");
+	}
+
+}
+
+
+//link - https://javadoc.io/doc/org.testng/testng/latest/org/testng/ITestListener.html
+//Link - https://javadoc.io/doc/org.testng/testng/latest/org/testng/ITestResult.html
+//Link - https://reportng.uncommons.org/
+
+
+

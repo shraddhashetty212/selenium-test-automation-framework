@@ -1,0 +1,32 @@
+package com.rwxls;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class WriteDataToXls {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//step 1 - create an object of the XSSFWorkBook which is in apache poi libraries added
+		XSSFWorkbook workbook = new XSSFWorkbook();
+		
+		//step 2 - create a sheet in the workbook
+		XSSFSheet sheet1 = workbook.createSheet("Sheet1");
+		
+		//step 3 - create row and columns
+		Row r0 = sheet1.createRow(0);
+		Cell c0 = r0.createCell(0);
+
+	}
+
+}
+
+/*
+ * https://poi.apache.org/apidocs/dev/index.html
+ * Class SXSSFWorkbook
+ * SXSSFWorkbook() -> Construct a new workbook with default row window size
+ * Class SXSSFSheet
+ */

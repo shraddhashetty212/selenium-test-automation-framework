@@ -1,0 +1,30 @@
+package com.readdata;
+
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+
+public class ReadDataDemo {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+
+		//Step 1 - Create an object of FileReader class or FileInputstream
+		//FileReader fr = new FileReader("/Users/shraddhashetty/eclipse-workspace/ReadAndWrite/src/com/properties/TestData.properties");
+		FileInputStream fis = new FileInputStream("/Users/shraddhashetty/eclipse-workspace/ReadAndWrite/src/com/properties/TestData.properties");
+		
+		//step 2 - create an object of properties class
+		Properties p = new Properties();
+		
+		//step 3 - load the file using the filereader or fileinputstream, both work the same way
+		//p.load(fr);
+		p.load(fis);
+		
+		//step 4 - use get property method to get the properties inside the file
+		System.out.println(p.getProperty("website"));
+		System.out.println(p.getProperty("name"));
+		System.out.println(System.getProperty("user.dir"));
+	}
+
+}

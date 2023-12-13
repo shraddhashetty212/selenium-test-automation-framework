@@ -1,0 +1,27 @@
+package com.readdata;
+
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Properties;
+
+public class WriteDataDemo {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+
+		//Step 1 - Create an object of FileWriter class or FileInputstream
+		FileWriter fw = new FileWriter("/Users/shraddhashetty/eclipse-workspace/ReadAndWrite/src/com/properties/TestData.properties");
+		//FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"/src/com/properties/TestData.properties");
+		
+		//step 2 - create an object of properties class
+		Properties p = new Properties();
+		
+		
+		//step 3 - use set property method to set the properties inside the file
+		p.setProperty("browser", "chrome");
+		p.store(fw, "Sample comments");
+	}
+
+}

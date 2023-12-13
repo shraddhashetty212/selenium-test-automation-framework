@@ -1,0 +1,21 @@
+package com.rwxls;
+
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class WriteDataToXls {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//step 1 - create an object of the XSSFWorkBook which is in apache poi libraries added
+		XSSFWorkbook workbook = new XSSFWorkbook();
+
+	}
+
+}
+
+/*
+ * https://poi.apache.org/apidocs/dev/index.html
+ * Class SXSSFWorkbook
+ * SXSSFWorkbook() -> Construct a new workbook with default row window size
+ */

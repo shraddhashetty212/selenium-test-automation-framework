@@ -1,0 +1,32 @@
+package com.readdata;
+
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Properties;
+
+public class WriteDataToTxtandCSV {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+
+		//Step 1 - Create an object of FileWriter class or FileOutputstream
+		//FileWriter fw = new FileWriter("/Users/shraddhashetty/eclipse-workspace/ReadAndWrite/src/com/properties/TestDataTXT.txt", true);
+		FileWriter fw = new FileWriter("/Users/shraddhashetty/eclipse-workspace/ReadAndWrite/src/com/properties/TestDataCSV.csv", true);
+
+		
+		//step 2 - USING BufferedWriter
+		BufferedWriter br = new BufferedWriter(fw);
+		
+		//step 3 - write data
+		br.write("Shraddha Shetty"+",");
+		
+		//step 4 - close the file
+		System.out.println("Written successfully");
+		br.close();
+	}
+
+}

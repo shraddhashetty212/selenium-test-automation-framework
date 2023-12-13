@@ -1,0 +1,67 @@
+package com.rwxls;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+public class ReadDataFromXls {
+
+	public static void main(String[] args) throws EncryptedDocumentException, IOException {
+		
+		File f = new File("/Users/shraddhashetty/eclipse-workspace/ReadWriteXlsFile/src/com/data/TestDataExcel1.xlsx");
+		FileInputStream fis = new FileInputStream(f);
+		
+		Workbook wb = WorkbookFactory.create(fis);
+		Sheet sheet0 = wb.getSheetAt(0);
+		
+		/*
+		Row row0 = sheet0.getRow(0);
+		Cell cell0 = row0.getCell(0);
+		
+		Row row1 = sheet0.getRow(1);
+		Cell cell1 = row0.getCell(1);
+		*/
+		
+		for (Row row: sheet0)
+		{
+			for (Cell cell: row)
+			{
+				switch(cell.getCellType())
+				{
+				case STRING:
+					System.out.println(cell.getStringCellValue());
+					break;
+				case BOOLEAN:
+					System.out.println(cell.getBooleanCellValue());
+					break;
+				case NUMERIC:
+					System.out.println(cell.getNumericCellValue());
+					break;
+					
+				default:
+						break;
+				}
+			}
+		}
+		
+		System.out.println(cell0);
+		System.out.println(cell1);
+		fis.close();
+		
+
+	}
+
+}
+
+/*
+ * https://poi.apache.org/apidocs/dev/index.html
+ * Class WorkbookFactory
+ * create(boolean xssf) -> Create a new empty Workbook, either XSSF or HSSF depending on the parameter
+*/

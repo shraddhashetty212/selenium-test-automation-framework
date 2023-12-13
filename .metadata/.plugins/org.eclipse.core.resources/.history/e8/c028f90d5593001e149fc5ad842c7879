@@ -1,0 +1,44 @@
+package common;
+
+import java.io.IOException;
+
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+
+import utilities.TestUtils;
+
+public class Listeners extends TestUtils implements ITestListener{
+	
+	public void onTestStart(ITestResult result)
+	{
+		Reporter.log("Method name is - "+result.getName());
+		System.out.println("Test case is starting");
+	}
+	
+	public void onTestSuccess(ITestResult result)
+	{
+		Reporter.log("Status of execution is - "+result.getStatus());
+	}
+	
+	public void onTestFailure(ITestResult result)
+	{
+		System.out.println("Test failed - screenshot captured");
+		
+		try {
+			getScreenshot();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Reporter.log("<a href=\"/Users/shraddhashetty/eclipse-workspace/webportal/screenshot\">Test Results</a>");
+	}
+
+}
+
+
+//link - https://javadoc.io/doc/org.testng/testng/latest/org/testng/ITestListener.html
+//Link - https://javadoc.io/doc/org.testng/testng/latest/org/testng/ITestResult.html
+
+

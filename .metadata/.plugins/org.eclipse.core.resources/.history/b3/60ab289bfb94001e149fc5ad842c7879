@@ -1,0 +1,57 @@
+package pkg1;
+
+public class Common {
+	
+	/*
+	public int length;
+	public int width;
+	public int height;
+	*/
+	
+	private int length;
+	private int width;
+	private int height;
+	
+	public void setBoxDimension(int l, int b, int h)
+	{
+		System.out.println("Box created with dimensions "+l+" "+b+" "+h+" ");
+	}
+	
+	
+	public int setLength(int l)
+	{
+		length = l;
+		return length;
+	}
+	
+	
+	public int setWidth(int b)
+	{
+		width = b;
+		return width;
+	}
+	
+	
+	public int setHeight(int h)
+	{
+		height = h;
+		return height;
+	}
+	
+	public int getLength(int l)
+	{
+		return length;
+	}
+	
+	public int getWidth(int b)
+	{
+		return width;
+	}
+	
+	
+	public int getHeight(int h)
+	{
+		return height;
+	}
+
+}

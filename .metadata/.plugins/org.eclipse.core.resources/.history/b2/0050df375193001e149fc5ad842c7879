@@ -1,0 +1,33 @@
+package common;
+
+import java.io.IOException;
+
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+
+import utilities.TestUtils;
+
+public class Listeners extends TestUtils implements ITestListener{
+	
+	public void onTestStart(ITestResult result)
+	{
+		System.out.println("Test case is starting");
+	}
+	
+	public void onTestFailure(ITestResult result)
+	{
+		System.out.println("Test failed - screenshot captured");
+		try {
+			getScreenshot();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}
+
+
+//link - https://javadoc.io/doc/org.testng/testng/latest/org/testng/ITestListener.html
+
+

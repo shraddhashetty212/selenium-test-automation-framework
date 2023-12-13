@@ -1,0 +1,15 @@
+package com.pkg2;
+
+import com.pkg1.ClassA;
+
+public class ClassB {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub\
+		
+		ClassA ca = new ClassA();
+		ca.publicMethod();
+
+	}
+
+}

@@ -1,0 +1,53 @@
+package ui;
+
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class VerifyTitleAndTextTest {
+	
+	@Test
+	public void titleTest()
+	{
+		SoftAssert softassert = new SoftAssert();
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.ebay.com/");
+		
+		String expectedtitle = "Electronics, Cars, Fashion, Collectibles & More | eBay";
+		String expectedtext = "Search";
+		
+		String actualTitle = driver.getTitle();
+		String actualText = driver.findElement(By.id("gh-btn")).getAttribute("value");
+		
+		System.out.println("Verifying Title");
+		AssertJUnit.assertEquals(actualTitle, expectedtitle, "Title verification failed");
+		System.out.println("Verifying Text");
+		AssertJUnit.assertEquals(actualText, expectedtext, "Text verification failed");
+		
+		System.out.println("Closing browser");
+		driver.quit();
+		softassert.assertAll();
+	}
+
+}
+
+
+//Link - https://javadoc.io/doc/org.testng/testng/latest/org/testng/Assert.html
+//Soft Assertion in TestNG
+
+//When we use hard assert i.e., just Assert.assertEquals then if there are lines of code below this assertion then 
+//they will not get executed. It will just stop at this line of code and fail.
+//If we use Soft Assert in this place then even though the assertion condition in 1st line if failed,
+//it will continue the execution of the below lines of code and pass the test case.
+
+//We have to use softassert.assertAll(); method at the end so that it gives the error where the code was failed.
+//Without using that, it will not show the error in the code and it will just show it as passed.
+

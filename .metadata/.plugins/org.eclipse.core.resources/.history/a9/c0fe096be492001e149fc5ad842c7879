@@ -1,0 +1,11 @@
+package common;
+
+import org.testng.IRetryAnalyzer;
+
+public class Retry implements IRetryAnalyzer{
+
+}
+
+
+//Link - https://javadoc.io/doc/org.testng/testng/latest/org/testng/IRetryAnalyzer.html
+

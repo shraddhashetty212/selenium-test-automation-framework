@@ -1,0 +1,53 @@
+package ui;
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class HandlingWindows {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		
+		WebDriverManager.chromedriver().setup();		
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://www.salesforce.com/au/");
+		driver.manage().window().maximize();
+		
+		//cookies
+		driver.findElement(By.id("onetrust-reject-all-handler")).click();
+		
+		driver.findElement(By.xpath("//a[@class='cta_button']")).click();
+		Thread.sleep(3000);
+		
+		Set<String> windowHandles = driver.getWindowHandles();
+		System.out.println(windowHandles);
+		
+		Iterator<String> iterator = windowHandles.iterator();
+		String parentwindow = iterator.next();
+		System.out.println(parentwindow);
+		String childwindow = iterator.next();
+		System.out.println(childwindow);
+		
+		driver.switchTo().window(childwindow);
+		
+		driver.findElement(By.name("UserFirstName")).sendKeys("Shraddha");
+		driver.findElement(By.name("UserLastName")).sendKeys("Shetty");
+		Thread.sleep(2000);
+		
+		driver.close();
+		driver.quit();
+
+	}
+
+}
+
+//Link - https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/WebDriver.html
+//Link for alert - https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/WebDriver.TargetLocator.html and then click on alert
+//https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/Alert.html
+
+

@@ -1,0 +1,39 @@
+package ui;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class HandlingWindows {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		
+		WebDriverManager.chromedriver().setup();		
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://www.salesforce.com/au/");
+		driver.manage().window().maximize();
+		
+		//cookies
+		//driver.findElement(By.id("accept-choices")).click();
+		
+		driver.findElement(By.xpath("//a[@class='cta_button']")).click();
+		Thread.sleep(3000);
+		
+		Set<String> windowHandles = driver.getWindowHandles();
+		System.out.println(windowHandles);
+		
+		driver.close();
+
+	}
+
+}
+
+//Link - https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/WebDriver.html
+//Link for alert - https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/WebDriver.TargetLocator.html and then click on alert
+//https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/Alert.html
+
+

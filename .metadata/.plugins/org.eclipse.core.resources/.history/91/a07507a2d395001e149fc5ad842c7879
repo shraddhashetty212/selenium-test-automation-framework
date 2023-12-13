@@ -1,0 +1,14 @@
+package com.readdata;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+public class ReadDataDemo {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+
+		FileReader fr = new FileReader("/Users/shraddhashetty/eclipse-workspace/ReadAndWrite/src/com/properties/TestData.properties");
+	}
+
+}

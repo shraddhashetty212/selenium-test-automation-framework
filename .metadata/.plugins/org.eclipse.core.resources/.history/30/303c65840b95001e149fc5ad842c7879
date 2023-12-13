@@ -1,0 +1,20 @@
+package package1;
+
+public class Shapes {
+	
+	public void drawShape()
+	{
+		System.out.println("Drawing Shape");
+	}
+	
+	public void colorShape()
+	{
+		System.out.println("Coloring Shape");
+	}
+	
+	public void moveShape()
+	{
+		System.out.println("Moving Shape");
+	}
+
+}

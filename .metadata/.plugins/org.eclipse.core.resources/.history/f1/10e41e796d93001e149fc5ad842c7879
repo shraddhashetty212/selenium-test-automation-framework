@@ -1,0 +1,26 @@
+package learningjava;
+
+public class DataTypeDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		byte bt = -128;
+		short sht = 32767;
+		int myint = 765784545;
+		long lng = 456789876L;
+		
+		float myfloat = 1.3434f;
+		double mydouble = 1.23434d;
+		
+		boolean bool = false;
+		char ch = 'z';
+		
+		//to create the object of the class
+		DataTypeDemo dtd = new DataTypeDemo();
+		//syntax of creating an object of the class is:-
+		//datatypeOftheClass variablename = new Classname();
+
+	}
+
+}

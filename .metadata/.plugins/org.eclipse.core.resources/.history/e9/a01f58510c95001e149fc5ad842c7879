@@ -1,0 +1,28 @@
+package package1;
+
+public class Rectangle extends Shapes{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void drawShape() {
+		System.out.println("Drawing rectangle");
+		
+	}
+
+	@Override
+	public void colorShape() {
+		System.out.println("Coloring rectangle");
+		
+	}
+
+	@Override
+	public void moveShape() {
+		System.out.println("Moving rectangle");
+		
+	}
+
+}

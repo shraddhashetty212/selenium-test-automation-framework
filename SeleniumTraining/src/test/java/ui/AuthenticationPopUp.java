@@ -1,0 +1,58 @@
+package ui;
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class AuthenticationPopUp {
+	
+	public static String username = "admin"; //Reading this from external XLS or CSV file
+	public static String pwd = "admin"; //Reading this from external XLS or CSV file
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		//driver.get("https://the-internet.herokuapp.com/basic_auth");
+		driver.get("https://"+username+":"+pwd+"@the-internet.herokuapp.com/basic_auth");
+		driver.manage().window().maximize();
+
+		//to handle authentication popups asking to enter username and password, we can just type the username and password in the url itself, 
+		//as in https://username:password@the-internet.herokuapp.com/basic_auth
+		//here the username and password is admin for both
+		//so https://admin:admin@the-internet.herokuapp.com/basic_auth
+		
+		//OR
+		
+		//you can externalize the username and password and then add it in the url by appending in driver.get() method
+		
+		
+		
+		
+		
+		
+		driver.quit();
+
+	}
+
+}
+
+//Link - https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/remote/DesiredCapabilities.html
+//Link - https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/chrome/ChromeOptions.html
+
+

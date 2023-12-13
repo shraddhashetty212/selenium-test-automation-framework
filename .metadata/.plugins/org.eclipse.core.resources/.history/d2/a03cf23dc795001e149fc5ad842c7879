@@ -1,0 +1,14 @@
+package com.superPackage;
+
+public class Parent {
+	
+	String empName = "Tom";
+	int empNum = 45345;
+	
+	public void getData()
+	{
+		System.out.println(empName);
+		System.out.println(empNum);
+	}
+
+}

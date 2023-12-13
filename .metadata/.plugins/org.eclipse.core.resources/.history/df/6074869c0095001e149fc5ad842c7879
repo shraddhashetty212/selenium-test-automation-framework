@@ -1,0 +1,27 @@
+package com.pkg1;
+
+public class MethodOverloading {
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+	
+	public void login(String s, String p)
+	{
+		System.out.println("Login successfull using username and password");
+	}
+	
+	public void login(int s, String p)
+	{
+		System.out.println("Login successfull using phonenumber and password");
+	}
+	
+	public void login(int s, String p, int t)
+	{
+		System.out.println("Login successfull using phonenumber, password and token");
+	}
+	
+
+}

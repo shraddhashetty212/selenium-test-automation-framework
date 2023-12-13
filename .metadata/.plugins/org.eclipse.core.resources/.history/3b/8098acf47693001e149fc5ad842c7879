@@ -1,0 +1,29 @@
+package learningjava;
+
+public class OperatorsInJava {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//Assignment operator "="
+		int mynumber = 10;
+		String str = "String demo";
+		
+		//Arithmetic operator
+		int number1 = 10;
+		int number2 = 20;
+		number1++;
+		number1--;
+		System.out.println(number1+number2);
+		System.out.println(number1+str); //concatenate when string is present
+		System.out.println(number2/number1);
+		
+		
+		
+		//Boolean
+		boolean bool = !true;
+		System.out.println(bool);
+
+	}
+
+}

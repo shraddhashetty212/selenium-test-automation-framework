@@ -1,0 +1,22 @@
+package com.wrapper;
+
+import java.util.ArrayList;
+
+public class ArrayListDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ArrayList al = new ArrayList();
+		al.add(10); //here integer 10 will be added as an object
+		al.add("Shraddha");
+		System.out.println(al.size());
+		System.out.println(al);
+
+	}
+
+}
+
+/*
+ * https://www.javadoc.io/doc/com.github.gwtd3/gwt-d3-api/latest/com/github/gwtd3/api/arrays/ArrayList.html
+ */

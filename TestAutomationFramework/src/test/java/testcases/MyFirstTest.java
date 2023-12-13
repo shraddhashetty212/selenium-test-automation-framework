@@ -1,0 +1,27 @@
+package testcases;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class MyFirstTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+		WebDriverManager.chromedriver().setup();  // base
+		WebDriver driver = new ChromeDriver();  // base
+		driver.get("https://www.zoho.com/");
+		driver.findElement(By.linkText("Einloggen")).click();  // locators -- properties
+		driver.findElement(By.id("login_id")).sendKeys("shraddhavikasshetty@gmail.com");
+		driver.findElement(By.id("nextbtn")).click();
+		driver.findElement(By.id("password")).sendKeys("Zoho2121");
+		driver.findElement(By.xpath("//button[@id='nextbtn']//span[contains(text(),'Anmelden')]")).click();
+		
+
+	}
+
+}

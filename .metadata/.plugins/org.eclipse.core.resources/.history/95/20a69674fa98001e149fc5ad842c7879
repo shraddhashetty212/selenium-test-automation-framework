@@ -1,0 +1,27 @@
+package com.wrapper;
+
+import java.util.HashMap;
+
+public class HashMapDemo {
+
+	public static void main(String[] args) {
+		//HashMap contains data as Key, Value pairs.
+		//Contains only unique keys.
+		//Not synchronized and no order
+		//Java HashMap may have one null key and multiple null values
+		
+		HashMap<String, String> hm1 = new HashMap<String, String>();
+		hm1.put("qa", "https://qa.com");
+		hm1.put("uat", "https://uat.com");
+		hm1.put("preprod", "https://preprod.com");
+		hm1.put("prod", "https://prod.com");
+		System.out.println(hm1);
+		
+		hm1.remove("qa");
+		//hm1.remove("uat", "test"); //this will not be removed bcz the value of uat is wrong
+		hm1.remove("uat", "https://uat.com");
+		System.out.println(hm1);
+
+	}
+
+}

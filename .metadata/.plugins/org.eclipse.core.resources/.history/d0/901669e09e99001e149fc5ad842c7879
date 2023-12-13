@@ -1,0 +1,20 @@
+package testcases;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import base.BaseTest;
+
+public class MyFirstTestFW extends BaseTest{
+	
+	@Test
+	public static void LoginTest()
+	{
+		driver.findElement(By.linkText("Einloggen")).click();  // locators -- properties
+		driver.findElement(By.id("login_id")).sendKeys("shraddhavikasshetty@gmail.com");
+		driver.findElement(By.id("nextbtn")).click();
+		driver.findElement(By.id("password")).sendKeys("Zoho2121");
+		driver.findElement(By.xpath("//button[@id='nextbtn']//span[contains(text(),'Anmelden')]")).click();
+	}
+
+}

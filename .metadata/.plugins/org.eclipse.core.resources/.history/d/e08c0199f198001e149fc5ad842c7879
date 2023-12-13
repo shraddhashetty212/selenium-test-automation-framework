@@ -1,0 +1,15 @@
+package com.wrapper;
+
+public class WrapperDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int i = 10;
+		//wrapping primitive data type integer into integer object using Integer class
+		Integer int1 = new Integer(i);
+		System.out.println(int1);
+
+	}
+
+}

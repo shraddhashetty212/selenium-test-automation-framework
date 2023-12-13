@@ -1,0 +1,16 @@
+package com.rwxls;
+
+public class WriteDataToXls {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+
+	}
+
+}
+
+/*
+ * https://poi.apache.org/apidocs/dev/index.html
+ */

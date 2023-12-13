@@ -1,0 +1,15 @@
+package learningjava;
+
+public class VariablesDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//type variablename = value;
+		int mynumber = 10;
+		char ch = 'A';
+		String str1 = "Shetty";
+
+	}
+
+}

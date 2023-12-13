@@ -1,0 +1,24 @@
+package base;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+
+public class BaseTest {
+	
+	public static WebDriver driver;
+	public static Properties prop = new Properties();
+	public static FileReader fr;
+	
+	public void setUp() throws IOException
+	{
+		if (driver==null)
+		{
+			FileReader fr = new FileReader("/Users/shraddhashetty/eclipse-workspace/TestAutomationFramework/src/test/resources/configfiles/config.properties");
+			prop.load(fr);
+		}
+	}
+
+}

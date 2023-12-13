@@ -1,0 +1,14 @@
+package learningjava;
+
+public class StringLiteralVsObject {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String str1 = "Shraddha";
+		
+		String str2 = new String("Shraddha");
+
+	}
+
+}

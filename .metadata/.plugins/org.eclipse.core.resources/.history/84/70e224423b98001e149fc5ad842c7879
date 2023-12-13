@@ -1,0 +1,41 @@
+package com.readdata;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Properties;
+
+public class ReadDataFromTxtandCSV {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+
+		//Step 1 - Create an object of FileReader class or using file class
+		File f = new File("/Users/shraddhashetty/eclipse-workspace/ReadAndWrite/src/com/properties/TestData.properties");
+		FileReader fr = new FileReader(f);
+
+		
+		//step 2 - USING BufferedWriter
+		BufferedWriter br = new BufferedWriter(fw);
+		
+		//step 3 - write data
+		for (int i =1; i < 10; i++)
+		{
+			br.write("Shraddha Shetty"+",");
+		}
+		
+		
+		//step 4 - close the file
+		System.out.println("Written successfully");
+		br.close();
+	}
+
+}
+
+/*
+ * https://javadoc.io/doc/io.rest-assured/rest-assured/3.0.1/io/restassured/internal/support/FileReader.html
+ */

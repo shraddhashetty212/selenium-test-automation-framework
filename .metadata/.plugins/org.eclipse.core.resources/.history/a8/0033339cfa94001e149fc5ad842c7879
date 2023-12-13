@@ -1,0 +1,14 @@
+package pkg1;
+
+public class CreateBox {
+
+	public static void main(String[] args) {
+		
+		Common cm = new Common();
+		int h = cm.height = 10;
+		int l = cm.length = 20;
+		int b = cm.width = 30;
+
+	}
+
+}

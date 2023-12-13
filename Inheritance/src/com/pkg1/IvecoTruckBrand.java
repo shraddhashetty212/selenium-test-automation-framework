@@ -1,0 +1,15 @@
+package com.pkg1;
+
+public class IvecoTruckBrand extends Truck{
+
+	public static void main(String[] args) {
+		
+
+		IvecoTruckBrand iv = new IvecoTruckBrand();
+		iv.loadCapacity();
+		iv.start();
+		iv.stop();
+
+	}
+
+}

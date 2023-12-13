@@ -1,0 +1,28 @@
+package com.superPackage;
+
+public class ThisKeyword {
+	
+	int x = 10;
+	int y = 20;
+	String s = "Shetty";
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ThisKeyword tk = new ThisKeyword();
+		tk.getData();
+
+	}
+	
+	public void getData()
+	{
+		//int a = 50;
+		//int b = 40;
+		
+		int x = 50;
+		int y = 40;
+		System.out.println(this.x + this.y);
+		System.out.println(x+y);
+	}
+
+}

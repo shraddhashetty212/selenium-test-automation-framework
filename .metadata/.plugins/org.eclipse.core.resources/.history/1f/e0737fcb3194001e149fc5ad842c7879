@@ -1,0 +1,21 @@
+package learningjava;
+
+public class MethodsDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		doLogin();
+
+	}
+	
+	public void doLogin()
+	{
+		System.out.println("Login successful");
+	}
+	
+	public void doLogout()
+	{
+		System.out.println("Logout successful");
+	}
+
+}

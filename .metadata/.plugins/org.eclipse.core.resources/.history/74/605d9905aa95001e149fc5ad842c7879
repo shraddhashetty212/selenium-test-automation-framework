@@ -1,0 +1,23 @@
+package package1;
+
+public class Circle implements Shapes{
+
+	@Override
+	public void drawShape() {
+		System.out.println("Draw circle");
+		
+	}
+
+	@Override
+	public void colorShape() {
+		System.out.println("Color circle");
+		
+	}
+
+	@Override
+	public void moveShape() {
+		System.out.println("Move circle");
+		
+	}
+
+}
